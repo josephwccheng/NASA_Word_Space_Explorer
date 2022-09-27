@@ -3,12 +3,12 @@
 
 
 from ntrs_client import NTRS_Client
-
 # Used for Date Extraction from String
 from datetime import datetime
-
 # Used for Progress Bar
 from tqdm import tqdm
+# Saving data in CSV
+import csv
 
 def process_citations_search_result(result):
     '''
@@ -33,20 +33,26 @@ def process_citations_search_result(result):
 
 if __name__ == '__main__':
     ntrs_client = NTRS_Client()
-
+    # Constants 
     page_size = 50
     response = ntrs_client.citations_search(
         {"center": "CDMS", "highlight": True})
-
     total = int(response['stats']['total'] / 1000)
-    output = []
-    for page_index in tqdm(range(0, total, page_size), desc="Sending through mutiple API requests to obtain document metadata"):
+    output_ntrs_cdms_results = []
+    output_ntrs_cdms_results_path = "data/pdf/ntrs_cdms_results.csv"
+
+    for page_index in tqdm(range(0, total, page_size), desc="1.1. Sending through mutiple API requests to obtain document metadata"):
         if page_index + page_size > total:
             page_size = total - page_index
         payload =  {"center": "CDMS", "page": {"from": page_index, "size": page_size}, "highlight":True}
         response = ntrs_client.citations_search(payload)
         results = response['results']
         for result in results:
-            output.append(process_citations_search_result(result))
+            output_ntrs_cdms_results.append(process_citations_search_result(result))
 
-    print("completed")
+
+    with open(output_ntrs_cdms_results_path, 'w') as f:
+        dict_writer = csv.DictWriter(f, output_ntrs_cdms_results[0].keys())
+        dict_writer.writeheader()
+        dict_writer.writerows(output_ntrs_cdms_results)
+    print("1.2. Completed writing file to csv")
