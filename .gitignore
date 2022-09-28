@@ -2,7 +2,8 @@
 *.pyc
 env/*
 logs/*
-
+.DS_Store
+data/.DS_Store
 ##
 ## Visual Studio Code
 ##

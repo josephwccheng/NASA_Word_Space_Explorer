@@ -35,3 +35,13 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
     6.2. Search Text used to search for most relevant Document (Abstract)
     6.3. Search Text used to search for most relevant Paragraph within Documents (Paragraph)
     6.4. Word Vector Space visualisation
+
+
+## 4. How to Run:
+1. (Optional) create a python virtual environment  
+    python -m venv env
+2. (Optional) activate into the environment  
+    (Windows) .\env\Scripts/activate  
+    (Mac / Linux) source env/bin/activate
+3. Install required packages  
+    pip install -r requirements.txt
