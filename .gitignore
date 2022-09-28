@@ -13,4 +13,4 @@ logs/*
 !.vscode/extensions.json
 
 # Stored Data
-data/*
+data/pdf/*
