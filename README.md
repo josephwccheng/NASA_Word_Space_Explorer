@@ -45,3 +45,7 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
     (Mac / Linux) source env/bin/activate
 3. Install required packages  
     pip install -r requirements.txt
+4. Install ＧloVe word embed
+    cd model/
+    wget http://nlp.stanford.edu/data/glove.6B.zip
+    unzip -q model/glove.6B.zip

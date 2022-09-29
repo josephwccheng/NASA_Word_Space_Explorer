@@ -1,0 +1,77 @@
+﻿scope,category,category_id
+AERONAUTICS,Aeronautics (General),1
+AERONAUTICS,Aerodynamics,2
+AERONAUTICS,Air Transportation and Safety,3
+AERONAUTICS,Aircraft Communications and Navigation,4
+AERONAUTICS,"Aircraft Design, Testing and Performance",5
+AERONAUTICS,Avionics and Aircraft Instrumentation,6
+AERONAUTICS,Aircraft Propulsion and Power,7
+AERONAUTICS,Aircraft Stability and Control,8
+AERONAUTICS,Research and Support Facilities (Air),9
+ASTRONAUTICS,Astronautics (General),12
+ASTRONAUTICS,Astrodynamics,13
+ASTRONAUTICS,Ground Support Systems and Facilities (Space),14
+ASTRONAUTICS,Launch Vehicles and Launch Operations,15
+ASTRONAUTICS,Space Transportation and Safety,16
+ASTRONAUTICS,"Space Communications, Spacecraft Communications, Command and Tracking",17
+ASTRONAUTICS,"Spacecraft Design, Testing and Performance",18
+ASTRONAUTICS,Spacecraft Instrumentation and Astrionics,19
+ASTRONAUTICS,Spacecraft Propulsion and Power,20
+CHEMISTRY AND MATERIALS,Chemistry and Materials (General),23
+CHEMISTRY AND MATERIALS,Composite Materials,24
+CHEMISTRY AND MATERIALS,"Inorganic, Organic and Physical Chemistry",25
+CHEMISTRY AND MATERIALS,Metals and Metallic Materials,26
+CHEMISTRY AND MATERIALS,Nonmetallic Materials,27
+CHEMISTRY AND MATERIALS,Propellants and Fuels,28
+CHEMISTRY AND MATERIALS,Space Processing,29
+ENGINEERING,Engineering (General),31
+ENGINEERING,Communications and Radar,32
+ENGINEERING,Electronics and Electrical Engineering,33
+ENGINEERING,Fluid Mechanics and Thermodynamics,34
+ENGINEERING,Instrumentation and Photography,35
+ENGINEERING,Lasers and Masers,36
+ENGINEERING,Mechanical Engineering,37
+ENGINEERING,Quality Assurance and Reliability,38
+ENGINEERING,Structural Mechanics,39
+GEOSCIENCES,Geosciences (General),42
+GEOSCIENCES,Earth Resources and Remote Sensing,43
+GEOSCIENCES,Energy Production and Conversion,44
+GEOSCIENCES,Environment Pollution,45
+GEOSCIENCES,Geophysics,46
+GEOSCIENCES,Meteorology and Climatology,47
+GEOSCIENCES,Oceanography,48
+LIFE SCIENCES,Life Sciences (General),51
+LIFE SCIENCES,Aerospace Medicine,52
+LIFE SCIENCES,Behavioral Sciences,53
+LIFE SCIENCES,Man/System Technology and Life Support,54
+LIFE SCIENCES,Exobiology,55
+MATHEMATICAL AND COMPUTER SCIENCES,Mathematical and Computer Sciences (General),59
+MATHEMATICAL AND COMPUTER SCIENCES,Computer Operations and Hardware,60
+MATHEMATICAL AND COMPUTER SCIENCES,Computer Programming and Software,61
+MATHEMATICAL AND COMPUTER SCIENCES,Computer Systems,62
+MATHEMATICAL AND COMPUTER SCIENCES,"Cybernetics, Artificial Intelligence and Robotics",63
+MATHEMATICAL AND COMPUTER SCIENCES,Numerical Analysis,64
+MATHEMATICAL AND COMPUTER SCIENCES,Statistics and Probability,65
+MATHEMATICAL AND COMPUTER SCIENCES,Systems Analysis and Operations Research,66
+MATHEMATICAL AND COMPUTER SCIENCES,Theoretical Mathematics,67
+PHYSICS,Physics (General),70
+PHYSICS,Acoustics,71
+PHYSICS,Atomic and Molecular Physics,72
+PHYSICS,Nuclear Physics,73
+PHYSICS,Optics,74
+PHYSICS,Plasma Physics,75
+PHYSICS,Solid-State Physics,76
+PHYSICS,Physics of Elementary Particles and Fields,77
+SOCIAL AND INFORMATION SCIENCES,Social and Information Sciences (General),80
+SOCIAL AND INFORMATION SCIENCES,Administration and Management,81
+SOCIAL AND INFORMATION SCIENCES,Documentation and Information Science,82
+SOCIAL AND INFORMATION SCIENCES,Economics and Cost Analysis,83
+SOCIAL AND INFORMATION SCIENCES,"Law, Political Science and Space Policy",84
+SOCIAL AND INFORMATION SCIENCES,Technology Utilization and Surface Transportation,85
+SPACE SCIENCES,Space Sciences (General),88
+SPACE SCIENCES,Astronomy,89
+SPACE SCIENCES,Astrophysics,90
+SPACE SCIENCES,Lunar and Planetary Science and Exploration,91
+SPACE SCIENCES,Solar Physics,92
+SPACE SCIENCES,Space Radiation,93
+GENERAL,General,99
