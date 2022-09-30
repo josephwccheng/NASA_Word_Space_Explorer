@@ -49,3 +49,9 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
     cd model/
     wget http://nlp.stanford.edu/data/glove.6B.zip
     unzip -q model/glove.6B.zip
+
+
+## 5. Inspirations and Citation
+1. [Word Embedding, Character Embedding and Contextual Embedding in BiDAF — an Illustrated Guide](https://towardsdatascience.com/the-definitive-guide-to-bidaf-part-2-word-embedding-character-embedding-and-contextual-c151fc4f05bb#:~:text=Character%20level%20embedding%20uses%20one,a%20word%2C%20character%20by%20character.)
+2. [JFK Cognitive Search](https://jfk-demo-2019.azurewebsites.net/#/search?term=oswald)
+3. [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/)
