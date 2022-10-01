@@ -1,5 +1,4 @@
 from tqdm import tqdm
-from os.path import exists
 from word_embedder_v1 import WordEmbedderV1
 import pandas as pd
 
@@ -34,7 +33,4 @@ if __name__ == '__main__':
     input_ntrs_cdms_results_path = "data/ntrs_cdms_results.csv"
     output_ntrs_word_embedder_with_glove ='data/ntrs_word_embedder_with_glove.txt'
 
-    if not exists(output_ntrs_word_embedder_with_glove):
-        create_ntrs_word_embedder_from_glove(glove_search_engine_v1, input_ntrs_cdms_results_path, output_ntrs_word_embedder_with_glove)
-    else:
-        print(f'{output_ntrs_word_embedder_with_glove} file already exists')
+    create_ntrs_word_embedder_from_glove(glove_search_engine_v1, input_ntrs_cdms_results_path, output_ntrs_word_embedder_with_glove)

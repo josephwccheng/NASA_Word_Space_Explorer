@@ -30,16 +30,23 @@ class WordEmbedderV1:
     def get_sum_array_embedding(self, input_text:str):
         result_array = []
         unique_tokenised_text = set(self.tokenize(input_text))
+        # analysis_total = len(unique_tokenised_text)
+        # analysis_not_found = 0
         for word in unique_tokenised_text:
             if word in self.embeddings_index.keys():
                 result_array.append(self.embeddings_index[word])
             else:
                 # TODO - Track the words that couldnt be captured from the GloVe model -> i.e. print(f'{word} was not found in the glove model')
+                # analysis_not_found = analysis_not_found + 1
                 continue
+        # print(f'not found percentage is {analysis_not_found/analysis_total}')
         return sum(result_array)
 
-    def find_similar_word_from_glove_vector(self, emmbedes):
-        nearest = sorted(self.embeddings_index.keys(), key=lambda word: spatial.distance.euclidean(self.embeddings_index[word], emmbedes))
+    def find_similar_word_from_glove_vector(self, emmbedes, distance_algo='cosine'):
+        if distance_algo == 'euclidean':
+            nearest = sorted(self.embeddings_index.keys(), key=lambda word: spatial.distance.euclidean(self.embeddings_index[word], emmbedes))
+        else:
+            nearest = sorted(self.embeddings_index.keys(), key=lambda word: spatial.distance.cosine(self.embeddings_index[word], emmbedes))
         return nearest
 
     # Helper Functions
