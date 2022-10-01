@@ -5,3 +5,5 @@ numpy
 tensorflow
 scipy
 gensim
+Flask
+flask_restful
