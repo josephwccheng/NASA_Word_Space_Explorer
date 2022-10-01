@@ -1,7 +1,5 @@
-# Used for Progress Bar
 from tqdm import tqdm
 from os.path import exists
-
 from word_embedder_v1 import WordEmbedderV1
 import pandas as pd
 

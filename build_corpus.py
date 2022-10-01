@@ -107,15 +107,15 @@ if __name__ == '__main__':
     queries = ['']
     output_ntrs_cdms_results_path = "data/ntrs_cdms_results.csv"
 
-    # Metadata Download
-    # nasa_scope_subject_to_category_path = "data/nasa_scope_subject_to_category.csv"
-    # nasa_scope_subject_to_category_df = pd.read_csv(nasa_scope_subject_to_category_path)
-    # subject_list = nasa_scope_subject_to_category_df.category.to_list()
-    # for subject in subject_list:
-    #     print(f'subject is: {subject}')
-    #     create_ntrs_results_table(ntrs_client=ntrs_client, query="", subjectCategory=subject, total=300)
+    # Metadata Download by querying every single subject category in the scope and subject documentation
+    nasa_scope_subject_to_category_path = "data/nasa_scope_subject_to_category.csv"
+    nasa_scope_subject_to_category_df = pd.read_csv(nasa_scope_subject_to_category_path)
+    subject_list = nasa_scope_subject_to_category_df.category.to_list()
+    for subject in subject_list:
+        print(f'subject is: {subject}')
+        create_ntrs_results_table(ntrs_client=ntrs_client, query="", subjectCategory=subject, total=300)
 
-    # PDF Download from Metadata
+    # PDF or Text Download from Metadata
     ntrs_cdms_results_df = pd.read_csv(output_ntrs_cdms_results_path)
     download_file_from_ntrs_results(ntrs_cdms_results_df, format='txt')
 

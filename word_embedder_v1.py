@@ -7,7 +7,7 @@
 
 import numpy as np
 from scipy import spatial
-
+from gensim.parsing.preprocessing import remove_stopwords
 # Using Keras to perform tokenisation as it does to_lower and removes unnecessary punctuations
 # Note: tokenize function has to be created to remove - from the reggex filter list because glove uses it
 import tensorflow as tf
@@ -29,7 +29,8 @@ class WordEmbedderV1:
 
     def get_sum_array_embedding(self, input_text:str):
         result_array = []
-        for word in self.tokenize(input_text):
+        unique_tokenised_text = set(self.tokenize(input_text))
+        for word in unique_tokenised_text:
             if word in self.embeddings_index.keys():
                 result_array.append(self.embeddings_index[word])
             else:
@@ -46,8 +47,9 @@ class WordEmbedderV1:
         return self.embeddings_index
 
     def tokenize(self, input_text:str):
+        filtered_text = remove_stopwords(input_text)
         return tf.keras.preprocessing.text.text_to_word_sequence(
-            input_text,
+            filtered_text,
             filters='!"#$%&()*+,./:;<=>?@[\\]^_`{|}~\t\n',
             lower=True,
             split=' '
