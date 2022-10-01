@@ -93,14 +93,14 @@ def download_file_from_ntrs_results(ntrs_cdms_results_df:pd.DataFrame, format='p
             print("incorrect format. Expect pdf or txt")
             return
         for _, row in tqdm(ntrs_cdms_results_df.iterrows(), desc="1.2. Downloading PDF files from the downloads url extracted from 1.1."):
-            pdf_file_path = 'data/pdf/' + str(row['document_id']) + f'.{format}'
-            if not exists(pdf_file_path) and isinstance(row[url_column], str):
+            file_path = f'data/{format}/' + str(row['document_id']) + f'.{format}'
+            if not exists(file_path) and isinstance(row[url_column], str):
                 response = ntrs_client.download_file_from_url(row[url_column])
-                with open(pdf_file_path, 'wb') as pdf_writer:
+                with open(file_path, 'wb') as pdf_writer:
                     pdf_writer.write(response.content)
-                print(f'{pdf_file_path} downloaded')
+                print(f'{file_path} downloaded')
             else:
-                print(f'{pdf_file_path} exists')
+                print(f'{file_path} exists')
 
 if __name__ == '__main__':
     ntrs_client = NTRS_Client()
@@ -117,6 +117,6 @@ if __name__ == '__main__':
 
     # PDF Download from Metadata
     ntrs_cdms_results_df = pd.read_csv(output_ntrs_cdms_results_path)
-    download_file_from_ntrs_results(ntrs_cdms_results_df, format='pdf')
+    download_file_from_ntrs_results(ntrs_cdms_results_df, format='txt')
 
     print("build_corpus script complete")
