@@ -20,18 +20,19 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
 ## 3. Approach:
 
 1. Building a corpus  
-  1.1. Obtain PDF files & Meta Data via NTRS  
+  1.1. Obtain PDF, Text File, & Metadata via NTRS Repository
   1.2. Create a MVP corpus based on filtered criteria
-2. Create a NLP Vector Space model on  
+2. Create a NLP Vector Space model on
     2.1. V1 - Title + Abstract (Mid Level Detail)  
     2.2. Txt File (Detailed Detail)  
 3. Create a search engine using the Vector Space Model above  
-    3.1. Use Cosin Similarity to recommend the top x Titles + Abstracts / Paragraphs
+    3.1. Use Cosin Similarity to recommend the top x Titles + Abstracts
 4. Implement Front-End that Provides:
-    4.1. Search Text used to search for most relevant Document (Title)  
-    4.2. Search Text used to search for most relevant Document (Abstract)  
+    4.1. Search Text used to search for most relevant Document
+    4.2. Tag recommendations of what users can search for 
     4.3. Search Text used to search for most relevant Paragraph within Documents (Paragraph)  
     4.4. Word Vector Space visualisation
+5. Implemnet Backend via Python Flask
 
 
 ## 4. How to Run:
@@ -46,10 +47,8 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
     cd model/
     wget http://nlp.stanford.edu/data/glove.6B.zip
     unzip -q model/glove.6B.zip
-5. (IMPORTANT) Install ＧloVe word embed for web application
-    cd word_space_explorer_app/model/
-    wget http://nlp.stanford.edu/data/glove.6B.zip
-    unzip -q model/glove.6B.zip
+5. make init
+6. make run
 
 
 ## 5. Inspirations and Citation
