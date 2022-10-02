@@ -2,7 +2,7 @@
 
 **Team Name:** Word Space Explorer  
 **Author:** Joseph Cheng  
-**Date:** 27/09/2022  
+**Date:** 01/10/2022  
 
 ## 1. Theme: **Make Space - “there’s always space for one more”**
 - S: Safe, Solve
