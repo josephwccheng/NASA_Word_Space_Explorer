@@ -16,7 +16,11 @@ data/.DS_Store
 # Stored Data
 data/pdf/*
 data/txt/*
+
 # Model
-model/glove_pretrained_model
 model/glove.6B.zip
 model/glove.6B/*
+
+#Web app
+word_space_explorer_app/model/glove.6B.zip
+word_space_explorer_app/model/glove.6B/*

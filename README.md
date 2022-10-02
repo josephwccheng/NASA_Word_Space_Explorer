@@ -46,6 +46,10 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
     cd model/
     wget http://nlp.stanford.edu/data/glove.6B.zip
     unzip -q model/glove.6B.zip
+5. (IMPORTANT) Install ＧloVe word embed for web application
+    cd word_space_explorer_app/model/
+    wget http://nlp.stanford.edu/data/glove.6B.zip
+    unzip -q model/glove.6B.zip
 
 
 ## 5. Inspirations and Citation

@@ -1,4 +1,3 @@
-#tutorial https://www.youtube.com/watch?v=GMppyAPbLYk&ab_channel=TechWithTim
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
 from os.path import exists
@@ -10,12 +9,12 @@ app = Flask(__name__)
 api = Api(app) # Side Note: Wrapping flask into Restful API
 
 # Web Server Gateway Interface
-glove_embedder_file_path = '../model/glove.6B/glove.6B.100d.txt'
-document_embedder_file_path ='../model/ntrs_document_embedder_with_glove.txt'
-ntrs_cdms_results_file_path ='../data/ntrs_cdms_results.csv'
-ntrs_trained_glove_model_file_path = '../model/ntrs_trained_glove_model.txt'
+glove_embedder_file_path = 'model/glove.6B/glove.6B.100d.txt'
+document_embedder_file_path ='model/ntrs_document_embedder_with_glove.txt'
+ntrs_cdms_results_file_path ='data/ntrs_cdms_results.csv'
+ntrs_trained_glove_model_file_path = 'model/ntrs_trained_glove_model.txt'
 # Check for all essential files
-for file in [glove_embedder_file_path, document_embedder_file_path, ntrs_cdms_results_file_path]:
+for file in [glove_embedder_file_path, document_embedder_file_path, ntrs_cdms_results_file_path, ntrs_cdms_results_file_path]:
     if not exists(file):
         print(f'{file} not found. it is required for the app')
 ntrs_cdms_results_df = pd.read_csv(ntrs_cdms_results_file_path)
