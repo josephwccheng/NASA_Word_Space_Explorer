@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nasa 2022 Hackathon - Word Space Explorer</title>
+    <link rel="icon" type="image/x-icon" href="assets/NASA_logo.svg">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+<!-- 1. Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="assets/NASA_logo.svg"></img>
+      <a class="navbar-brand" href="#">Nasa 2022 Hackathon - Word Space Explorer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://2022.spaceappschallenge.org/challenges/2022-challenges/science-legacy/teams/word-space-exploror/project">Team Link</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<!-- 1. Navigation Bar ENDS-->
+    <img src="assets/word_space_explorer.png" class="space_image"></img>
+<!-- 2. Search bar-->
+    <div class="search">
+      
+      <input id="search" type="text" placeholder="Enter any questions..."><br>
+      <a href="#" id="searchBtn" class="btn">
+        <img src="assets/search.png"></img>
+        Search
+      </a>
+    </div>
+<!-- 2. Search bar ENDS-->
+
+<!-- 2. Tag Result-->
+    <h2 class="header">Tier 2 A.I. Tag Recommender</h2>
+    <p class="paragraph">The tag recommender will provide a list of words that are closely related to the query the user enters. Click on any of these tags to enhance your query!</p>
+    <div id="tagResult"></div>
+
+    <h2 class="header">Document Result</h2>
+    <p class="paragraph">Here is a list of documents and their metadata</p>
+    <div id="documentResults"></div>
+
+<!-- 2. Tag Result ENDS-->
+  </body>
+  <script>
+    document.getElementById("searchBtn").addEventListener("click", searchClicked);
+  </script>
+</html>

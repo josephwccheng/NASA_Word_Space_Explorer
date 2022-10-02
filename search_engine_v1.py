@@ -17,7 +17,8 @@ class SearchEngineV1:
 
 if __name__ == '__main__':
     # Example of how Search Engine is loaded and run
-    glove_embedder_file_path= 'model/glove.6B/glove.6B.100d.txt'
+    glove_embedder_file_path = 'model/ntrs_trained_glove_model.txt'
+    # glove_embedder_file_path= 'model/glove.6B/glove.6B.100d.txt'
     document_embedder_file_path='model/ntrs_document_embedder_with_glove.txt'
     search_engine_v1 = SearchEngineV1(glove_embedder_file_path=glove_embedder_file_path, document_embedder_file_path=document_embedder_file_path)
 
