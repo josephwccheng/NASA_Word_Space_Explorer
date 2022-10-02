@@ -23,7 +23,8 @@ def create_ntrs_word_embedder_from_glove(glove_search_engine_v1: WordEmbedderV1,
 
 if __name__ == '__main__':
 
-    glove_search_engine_v1 = WordEmbedderV1(embedder_file_path='model/glove.6B/glove.6B.100d.txt')
+    glove_search_engine_v1 = WordEmbedderV1(embedder_file_path='model/ntrs_trained_glove_model.txt')
+    # glove_search_engine_v1 = WordEmbedderV1(embedder_file_path='model/glove.6B/glove.6B.100d.txt')
     ## Sample Code to run and obtain similar words
     test_string = 'nasa hackathon space app challenge HBCUs Research Conference Agenda and Abstracts 19-minute'
     emmbedes = glove_search_engine_v1.get_sum_array_embedding(test_string)

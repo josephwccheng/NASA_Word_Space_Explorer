@@ -20,7 +20,7 @@ for file in [glove_embedder_file_path, document_embedder_file_path, ntrs_cdms_re
 ntrs_cdms_results_df = pd.read_csv(ntrs_cdms_results_file_path)
 
 # Models Deploymnet
-search_engine = SearchEngineV1(glove_embedder_file_path=glove_embedder_file_path, document_embedder_file_path=document_embedder_file_path)
+search_engine = SearchEngineV1(glove_embedder_file_path=ntrs_trained_glove_model_file_path, document_embedder_file_path=document_embedder_file_path)
 tag_recommender = TagRecommenderV1(ntrs_trained_glove_model_path= ntrs_trained_glove_model_file_path)
 
 class Home(Resource): # Side Note: creating a class and inherit from Resource - different methods we can overwrite on
