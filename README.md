@@ -48,7 +48,7 @@ The NASA Technical Report Server (NTRS) includes hundreds of thousands of items 
     wget http://nlp.stanford.edu/data/glove.6B.zip
     unzip -q model/glove.6B.zip
 5. make init
-6. make run
+6. make run (For Backend Deployment)
 
 
 ## 5. Inspirations and Citation
