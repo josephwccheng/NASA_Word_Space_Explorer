@@ -2,7 +2,7 @@ from tqdm import tqdm
 from word_embedder_v1 import WordEmbedderV1
 import pandas as pd
 
-def create_ntrs_word_embedder_from_glove(glove_search_engine_v1: WordEmbedderV1, input_ntrs_cdms_results_path:str = "data/ntrs_cdms_results.csv", output_ntrs_word_embedder_with_glove:str='data/ntrs_word_embedder_with_glove.txt'):
+def create_ntrs_word_embedder_from_glove(glove_search_engine_v1: WordEmbedderV1, input_ntrs_cdms_results_path:str = "data/ntrs_cdms_results.csv", output_ntrs_word_embedder_with_glove:str='model/ntrs_document_embedder_with_glove.txt'):
     # Obtain document vectors
     # version 1 - concat title + abstract
     ntrs_cdms_results_df = pd.read_csv(input_ntrs_cdms_results_path)
@@ -23,7 +23,7 @@ def create_ntrs_word_embedder_from_glove(glove_search_engine_v1: WordEmbedderV1,
 
 if __name__ == '__main__':
 
-    glove_search_engine_v1 = WordEmbedderV1(embedder_file_path='model/glove.6B.100d.txt')
+    glove_search_engine_v1 = WordEmbedderV1(embedder_file_path='model/glove.6B/glove.6B.100d.txt')
     ## Sample Code to run and obtain similar words
     test_string = 'nasa hackathon space app challenge HBCUs Research Conference Agenda and Abstracts 19-minute'
     emmbedes = glove_search_engine_v1.get_sum_array_embedding(test_string)
@@ -31,6 +31,6 @@ if __name__ == '__main__':
     
     ## Building a Document Word Embedder based on GloVe
     input_ntrs_cdms_results_path = "data/ntrs_cdms_results.csv"
-    output_ntrs_word_embedder_with_glove ='data/ntrs_word_embedder_with_glove.txt'
+    output_ntrs_word_embedder_with_glove ='model/ntrs_document_embedder_with_glove.txt'
 
     create_ntrs_word_embedder_from_glove(glove_search_engine_v1, input_ntrs_cdms_results_path, output_ntrs_word_embedder_with_glove)

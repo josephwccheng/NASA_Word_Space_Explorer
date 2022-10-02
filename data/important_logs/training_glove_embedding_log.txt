@@ -1,0 +1,54 @@
+(base) joseph GloVe % ./demo.sh
+mkdir -p build
+
+$ build/vocab_count -min-count 5 -verbose 2 < ntrs_txt > vocab.txt
+BUILDING VOCABULARY
+Processed 14960765 tokens.
+Counted 594003 unique words.
+Truncating vocabulary at min count 5.
+Using vocabulary of size 74066.
+
+$ build/cooccur -memory 4.0 -vocab-file vocab.txt -verbose 2 -window-size 15 < ntrs_txt > cooccurrence.bin
+COUNTING COOCCURRENCES
+window size: 15
+context: symmetric
+max product: 13752509
+overflow length: 38028356
+Reading vocab from file "vocab.txt"...loaded 74066 words.
+Building lookup table...table contains 96038149 elements.
+Processed 14960765 tokens.
+Writing cooccurrences to disk.........3 files in total.
+Merging cooccurrence files: processed 69917049 lines.
+
+$ build/shuffle -memory 4.0 -verbose 2 < cooccurrence.bin > cooccurrence.shuf.bin
+Using random seed 1664671572
+SHUFFLING COOCCURRENCES
+array size: 255013683
+Shuffling by chunks: processed 69917049 lines.
+Wrote 1 temporary file(s).
+Merging temp files: processed 69917049 lines.
+
+$ build/glove -save-file vectors -threads 8 -input-file cooccurrence.shuf.bin -x-max 10 -iter 15 -vector-size 50 -binary 2 -vocab-file vocab.txt -verbose 2
+TRAINING MODEL
+Read 69917049 lines.
+Initializing parameters...Using random seed 1664671604
+done.
+vector size: 50
+vocab size: 74066
+x_max: 10.000000
+alpha: 0.750000
+10/02/22 - 11:46.55AM, iter: 001, cost: 0.083660
+10/02/22 - 11:47.06AM, iter: 002, cost: 0.062990
+10/02/22 - 11:47.16AM, iter: 003, cost: 0.057026
+10/02/22 - 11:47.27AM, iter: 004, cost: 0.054116
+10/02/22 - 11:47.38AM, iter: 005, cost: 0.052412
+10/02/22 - 11:47.49AM, iter: 006, cost: 0.051272
+10/02/22 - 11:48.01AM, iter: 007, cost: 0.050444
+10/02/22 - 11:48.12AM, iter: 008, cost: 0.049808
+10/02/22 - 11:48.22AM, iter: 009, cost: 0.049301
+10/02/22 - 11:48.33AM, iter: 010, cost: 0.048886
+10/02/22 - 11:48.44AM, iter: 011, cost: 0.048535
+10/02/22 - 11:48.54AM, iter: 012, cost: 0.048236
+10/02/22 - 11:49.05AM, iter: 013, cost: 0.047977
+10/02/22 - 11:49.17AM, iter: 014, cost: 0.047750
+10/02/22 - 11:49.28AM, iter: 015, cost: 0.047547

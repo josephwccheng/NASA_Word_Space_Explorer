@@ -5,7 +5,7 @@ import pandas as pd
 from word_embedder_v1 import WordEmbedderV1
 
 class SearchEngineV1:
-    def __init__(self, glove_embedder_file_path:str= 'model/glove.6B.100d.txt', document_embedder_file_path:str='data/ntrs_word_embedder_with_glove.txt'):
+    def __init__(self, glove_embedder_file_path:str= 'model/glove.6B/glove.6B.100d.txt', document_embedder_file_path:str='model/ntrs_document_embedder_with_glove.txt'):
         self.glove_search_engine_v1 = WordEmbedderV1(embedder_file_path=glove_embedder_file_path)
         self.document_search_engine_v1 = WordEmbedderV1(embedder_file_path=document_embedder_file_path)
 
@@ -17,8 +17,8 @@ class SearchEngineV1:
 
 if __name__ == '__main__':
     # Example of how Search Engine is loaded and run
-    glove_embedder_file_path= 'model/glove.6B.100d.txt'
-    document_embedder_file_path='data/ntrs_word_embedder_with_glove.txt'
+    glove_embedder_file_path= 'model/glove.6B/glove.6B.100d.txt'
+    document_embedder_file_path='model/ntrs_document_embedder_with_glove.txt'
     search_engine_v1 = SearchEngineV1(glove_embedder_file_path=glove_embedder_file_path, document_embedder_file_path=document_embedder_file_path)
 
     test_string = 'Preliminary Results of Flight Tests of a Conventional Three-Blade Propeller at High Speeds'
@@ -37,4 +37,4 @@ if __name__ == '__main__':
         count = count + 1
         if count > 100:
             break
-    print("test")
+    print(f'{validate_list}')
